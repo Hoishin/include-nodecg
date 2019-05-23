@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import yargs from 'yargs';
 import {postinstall} from './postinstall';
 import {start} from './start';
