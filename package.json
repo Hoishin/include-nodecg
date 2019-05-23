@@ -1,0 +1,60 @@
+{
+	"name": "include-nodecg",
+	"version": "0.0.0",
+	"description": "Tools to include NodeCG in your bundle, rather than including your bundle in NodeCG",
+	"license": "MIT",
+	"bin": "bin.js",
+	"husky": {
+		"pre-commit": "lint-staged"
+	},
+	"scripts": {
+		"build": "del-cli dist && tsc"
+	},
+	"lint-staged": {
+		"concurrent": false,
+		"linters": {
+			"*.{ts,json,yml,md}": [
+				"prettier --write",
+				"git add"
+			],
+			"*.ts": [
+				"eslint --fix",
+				"git add"
+			],
+			"package.json": [
+				"sort-package-json",
+				"git add"
+			]
+		}
+	},
+	"prettier": "@hoishin/prettierrc",
+	"dependencies": {
+		"app-root-path": "^2.2.1",
+		"bower": "^1.8.8",
+		"del": "^4.1.1",
+		"is-docker": "^2.0.0",
+		"is-root": "^2.1.0",
+		"tslib": "^1.9.3",
+		"yargs": "^13.2.4"
+	},
+	"devDependencies": {
+		"@hoishin/eslint-config-ts": "^0.0.5",
+		"@hoishin/prettierrc": "^2.1.1",
+		"@hoishin/tsconfig": "^1.0.0",
+		"@types/app-root-path": "^1.2.4",
+		"@types/node": "10",
+		"@types/yargs": "^13.0.0",
+		"del-cli": "^1.1.0",
+		"eslint": "^5.16.0",
+		"eslint-config-prettier": "^4.3.0",
+		"husky": "^2.3.0",
+		"lint-staged": "^8.1.7",
+		"nodecg": "^1.4.0",
+		"prettier": "^1.17.1",
+		"sort-package-json": "^1.22.1",
+		"typescript": "3.4.5"
+	},
+	"peerDependencies": {
+		"nodecg": "*"
+	}
+}
