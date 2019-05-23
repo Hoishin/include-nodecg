@@ -9,7 +9,8 @@
 		"pre-commit": "lint-staged"
 	},
 	"scripts": {
-		"build": "del-cli dist && tsc"
+		"build": "del-cli dist && tsc",
+		"prepublishOnly": "yarn build"
 	},
 	"lint-staged": {
 		"concurrent": false,
