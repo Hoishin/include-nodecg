@@ -1,7 +1,9 @@
 {
 	"name": "include-nodecg",
-	"files": ["dist"],
-	"version": "0.0.0",
+	"files": [
+		"dist"
+	],
+	"version": "0.0.1-0",
 	"description": "Tools to include NodeCG in your bundle, rather than including your bundle in NodeCG",
 	"license": "MIT",
 	"bin": "dist/bin.js",
