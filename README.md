@@ -20,6 +20,15 @@ or
 yarn add include-nodecg nodecg
 ```
 
+## Setup
+
+- Setup `postinstall` npm hook in package.json
+    ```json
+    "scripts": {
+      "postinstall": "include-nodecg postinstall"
+    }
+    ```
+
 ## CLI
 
 ```
@@ -27,6 +36,7 @@ include-nodecg <command>
 
 Commands:
   include-nodecg postinstall  Set this command to npm `postinstall` hook
+  include-nodecg start        Start NodeCG
 
 Options:
   --help     Show help                                                 [boolean]
