@@ -11,7 +11,7 @@
 `nodecg` must be installed as npm package along with this package
 
 ```
-npm i include-nodecg nodecg
+npm i -S include-nodecg nodecg
 ```
 
 or
