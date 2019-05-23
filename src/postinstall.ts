@@ -13,7 +13,7 @@ export const postinstall = (): void => {
 
 	del.sync(bundlePath);
 	fs.symlinkSync(
-		path.relative(bundlePath, appRootPath.path),
+		path.relative(path.dirname(bundlePath), appRootPath.path),
 		bundlePath,
 		'dir',
 	);
