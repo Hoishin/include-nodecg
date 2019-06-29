@@ -45,10 +45,10 @@ export const linkCfg = async (): Promise<void> => {
 		await readdir(sourceCfgPath);
 	} catch (error) {
 		if (error.code === 'ENOENT') {
-			await mkdir(sourceCfgPath)
-			return;
+			await mkdir(sourceCfgPath);
+		} else {
+			throw error;
 		}
-		throw error;
 	}
 	const cfgPath = path.join(nodecgPath, 'cfg');
 	await del(cfgPath);
