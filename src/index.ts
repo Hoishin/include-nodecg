@@ -45,7 +45,7 @@ export const linkCfg = async (): Promise<void> => {
 		await readdir(sourceCfgPath);
 	} catch (error) {
 		if (error.code === 'ENOENT') {
-			console.log('cfg directory does not exist in this project');
+			await mkdir(sourceCfgPath)
 			return;
 		}
 		throw error;
