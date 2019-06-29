@@ -1,17 +1,18 @@
 {
 	"name": "include-nodecg",
 	"files": [
-		"dist"
+		"lib"
 	],
 	"version": "0.0.1-1",
 	"description": "Tools to include NodeCG in your bundle, rather than including your bundle in NodeCG",
 	"license": "MIT",
-	"bin": "dist/bin.js",
+	"main": "lib/index.js",
+	"bin": "lib/bin/index.js",
 	"husky": {
 		"pre-commit": "lint-staged"
 	},
 	"scripts": {
-		"build": "del-cli dist && tsc",
+		"build": "del-cli lib && tsc",
 		"prepublishOnly": "yarn build"
 	},
 	"lint-staged": {
@@ -36,6 +37,7 @@
 		"app-root-path": "^2.2.1",
 		"bower": "^1.8.8",
 		"del": "^4.1.1",
+		"execa": "^2.0.1",
 		"is-docker": "^2.0.0",
 		"is-root": "^2.1.0",
 		"tslib": "^1.9.3",

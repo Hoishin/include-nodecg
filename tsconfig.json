@@ -2,8 +2,9 @@
 	"extends": "@hoishin/tsconfig",
 	"compilerOptions": {
 		"rootDir": "src",
-		"outDir": "dist",
-		"types": ["node"]
+		"outDir": "lib",
+		"types": ["node"],
+		"declaration": true
 	},
 	"include": ["src/**/*.ts"]
 }
