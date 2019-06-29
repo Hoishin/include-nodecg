@@ -19,12 +19,14 @@ export const {name: bundleName} = appRootPath.require('package.json');
 
 export const bowerInstall = async (): Promise<void> => {
 	const shouldAllowRoot = isDocker() && isRoot();
-	await execa.command(
+	const bowerProcess = execa.command(
 		shouldAllowRoot
 			? 'bower install --production --allow-root'
 			: 'bower install --production',
 		{preferLocal: true, cwd: nodecgPath},
 	);
+	bowerProcess.stderr.pipe(process.stderr);
+	await bowerProcess;
 };
 
 export const linkBundle = async (): Promise<void> => {
