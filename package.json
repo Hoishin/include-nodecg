@@ -46,7 +46,7 @@
 	"devDependencies": {
 		"@hoishin/eslint-config-ts": "0.0.5",
 		"@hoishin/prettierrc": "2.1.1",
-		"@hoishin/tsconfig": "1.0.0",
+		"@hoishin/tsconfig": "2.0.0",
 		"@types/app-root-path": "1.2.4",
 		"@types/node": "10.14.12",
 		"@types/yargs": "13.0.0",

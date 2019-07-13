@@ -154,10 +154,10 @@
   resolved "https://registry.yarnpkg.com/@hoishin/prettierrc/-/prettierrc-2.1.1.tgz#adebd54c4968842689b51f9fc1a981ba3a57adad"
   integrity sha512-E4MT/dLaRhS8zEBZwFNIOd7OB24npiizdEh0ISogQZh9Ldw4zFnWtpOt3hXt/ruKM9eG/N56mj5dF4cQW+jhsw==
 
-"@hoishin/tsconfig@1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@hoishin/tsconfig/-/tsconfig-1.0.0.tgz#1fa4d99037de5442880541b6b228837d54bc9f76"
-  integrity sha512-Qy6rgHT7M6rKoUjvHak1wE8BfFnSrcF5MVKAkyl4Haaurn33kSUGnzg0t9RDob91rBKtuLx/FA1JK5dDcpsasg==
+"@hoishin/tsconfig@2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@hoishin/tsconfig/-/tsconfig-2.0.0.tgz#bbd2398ef27c0fa0ebca54b1e6e9be585a8e66fe"
+  integrity sha512-45PV1ZckyazA4sZx/KU/LWCgNLD4E8bRG6dR1kCXnyGHd+yZJLsF796XPq+1DaNVnVRvqUZ5ZSYBE6dZe31Udw==
 
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.0"
