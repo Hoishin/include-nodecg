@@ -58,7 +58,7 @@
 		"nodecg": "^1.4.0",
 		"prettier": "^1.17.1",
 		"sort-package-json": "^1.22.1",
-		"typescript": "3.4.5"
+		"typescript": "3.5.3"
 	},
 	"peerDependencies": {
 		"nodecg": "*"
