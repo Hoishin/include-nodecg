@@ -36,7 +36,7 @@
 	"dependencies": {
 		"app-root-path": "^2.2.1",
 		"bower": "^1.8.8",
-		"del": "^4.1.1",
+		"del": "^5.0.0",
 		"execa": "^2.0.1",
 		"is-docker": "^2.0.0",
 		"is-root": "^2.1.0",
