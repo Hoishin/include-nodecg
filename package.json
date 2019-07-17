@@ -48,7 +48,7 @@
 		"@hoishin/prettierrc": "2.1.1",
 		"@hoishin/tsconfig": "2.0.0",
 		"@types/app-root-path": "1.2.4",
-		"@types/node": "10.14.12",
+		"@types/node": "10.14.13",
 		"@types/yargs": "13.0.0",
 		"del-cli": "2.0.0",
 		"eslint": "6.0.1",
