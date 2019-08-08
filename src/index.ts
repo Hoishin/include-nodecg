@@ -18,6 +18,10 @@ const mkdir = promisify(fs.mkdir);
 export const {name: bundleName} = appRootPath.require('package.json');
 
 export const bowerInstall = async (): Promise<void> => {
+	const nodecgDirFiles = await readdir(nodecgPath, {encoding: 'utf8'});
+	if (!nodecgDirFiles.includes('bower.json')) {
+		return;
+	}
 	const shouldAllowRoot = isDocker() && isRoot();
 	const bowerProcess = execa.command(
 		shouldAllowRoot
