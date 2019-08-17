@@ -54,7 +54,7 @@
 		"eslint": "6.1.0",
 		"eslint-config-prettier": "6.0.0",
 		"husky": "3.0.3",
-		"lint-staged": "9.2.1",
+		"lint-staged": "9.2.3",
 		"nodecg": "1.4.1",
 		"prettier": "1.18.2",
 		"sort-package-json": "1.22.1",
