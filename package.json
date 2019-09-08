@@ -50,7 +50,7 @@
 		"@types/app-root-path": "1.2.4",
 		"@types/node": "10.14.17",
 		"@types/yargs": "13.0.2",
-		"del-cli": "2.0.0",
+		"del-cli": "3.0.0",
 		"eslint": "6.3.0",
 		"eslint-config-prettier": "6.2.0",
 		"husky": "3.0.5",
