@@ -44,20 +44,20 @@
 		"yargs": "^14.0.0"
 	},
 	"devDependencies": {
-		"@hoishin/prettierrc": "^2.1.1",
-		"@hoishin/tsconfig": "^2.0.0",
-		"@types/app-root-path": "^1.2.4",
-		"@types/node": "^10.14.22",
-		"@types/yargs": "^13.0.3",
-		"del-cli": "^3.0.0",
-		"eslint": "^6.5.1",
-		"eslint-config-hoishin": "^0.2.1",
-		"husky": "^3.0.9",
-		"lint-staged": "^9.4.2",
+		"@hoishin/prettierrc": "2.1.1",
+		"@hoishin/tsconfig": "2.0.0",
+		"@types/app-root-path": "1.2.4",
+		"@types/node": "10.17.0",
+		"@types/yargs": "13.0.3",
+		"del-cli": "3.0.0",
+		"eslint": "6.5.1",
+		"eslint-config-hoishin": "0.2.1",
+		"husky": "3.0.9",
+		"lint-staged": "9.4.2",
 		"nodecg": "1.4.1",
-		"prettier": "^1.18.2",
-		"sort-package-json": "^1.22.1",
-		"typescript": "^3.6.4"
+		"prettier": "1.18.2",
+		"sort-package-json": "1.22.1",
+		"typescript": "3.6.4"
 	},
 	"peerDependencies": {
 		"nodecg": "*"
