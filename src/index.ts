@@ -1,6 +1,7 @@
 import path from 'path';
 import fs from 'fs';
 import {promisify} from 'util';
+
 import execa from 'execa';
 import del from 'del';
 import appRootPath from 'app-root-path';
@@ -84,5 +85,5 @@ export const linkDb = async (): Promise<void> => {
 };
 
 export const start = (): void => {
-	require(nodecgPath);
+	require(nodecgPath); // eslint-disable-line @typescript-eslint/no-require-imports
 };

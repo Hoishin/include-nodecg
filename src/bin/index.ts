@@ -1,8 +1,10 @@
 #!/usr/bin/env node
 
 import yargs from 'yargs';
-import {start} from '..';
+
 import {postinstall} from './postinstall';
+
+import {start} from '..';
 
 export const enum Command {
 	Postinstall = 'postinstall',

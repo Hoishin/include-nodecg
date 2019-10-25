@@ -1,8 +1,5 @@
 {
-	"extends": ["@hoishin/ts", "prettier", "prettier/@typescript-eslint"],
-	"parserOptions": {
-		"project": "./tsconfig.json"
-	},
+	"extends": ["hoishin", "hoishin/typescript"],
 	"rules": {
 		"no-sync": 0,
 		"no-console": 0
