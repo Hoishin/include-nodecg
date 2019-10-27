@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.1](https://github.com/Hoishin/include-nodecg/compare/v0.0.1-7...v0.0.1) (2019-10-27)
+
+
+### Bug Fixes
+
+* copy dependencies instead of symlink ([526ca91](https://github.com/Hoishin/include-nodecg/commit/526ca910aae1c383a308ae2c562fa981cf6633f8))
+
 ### [0.0.1-7](https://github.com/Hoishin/include-nodecg/compare/v0.0.1-6...v0.0.1-7) (2019-10-27)
 
 
