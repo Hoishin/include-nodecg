@@ -8,7 +8,7 @@ import appRootPath from 'app-root-path';
 import isRoot from 'is-root';
 import isDocker from 'is-docker';
 import loadJson from 'load-json-file';
-import makeDir from 'make-dir';
+import cpy from 'cpy'
 
 const nodecgPath = appRootPath.resolve('node_modules/nodecg');
 
@@ -86,7 +86,7 @@ export const linkDb = async (): Promise<void> => {
 	);
 };
 
-export const linkNodeModules = async (): Promise<void> => {
+export const copyNodeModules = async (): Promise<void> => {
 	// eslint-disable-next-line @typescript-eslint/no-var-requires, @typescript-eslint/no-require-imports
 	const nodecgNodeModulesPath = path.join(nodecgPath, 'node_modules');
 	const rootNodeModulesPath = appRootPath.resolve('node_modules');
@@ -99,18 +99,8 @@ export const linkNodeModules = async (): Promise<void> => {
 			await readdir(targetDir);
 			continue;
 		} catch (_) {
-			// Move on to making symlink if target doesn't exist
+			await cpy(path.join(rootNodeModulesPath, dep), targetDir)
 		}
-		await makeDir(path.dirname(targetDir));
-		await del(targetDir);
-		await symlink(
-			path.relative(
-				path.dirname(targetDir),
-				path.join(rootNodeModulesPath, dep),
-			),
-			targetDir,
-			'dir',
-		);
 	}
 };
 
