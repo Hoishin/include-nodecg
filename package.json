@@ -13,7 +13,7 @@
 	},
 	"scripts": {
 		"build": "del-cli lib && tsc",
-		"prepublishOnly": "yarn build"
+		"test": "ts-node src/bin postinstall"
 	},
 	"lint-staged": {
 		"concurrent": false,
@@ -40,6 +40,8 @@
 		"execa": "^3.0.0",
 		"is-docker": "^2.0.0",
 		"is-root": "^2.1.0",
+		"load-json-file": "^6.2.0",
+		"make-dir": "^3.0.0",
 		"tslib": "^1.9.3",
 		"yargs": "^14.0.0"
 	},
@@ -54,9 +56,10 @@
 		"eslint-config-hoishin": "^0.2.1",
 		"husky": "^3.0.9",
 		"lint-staged": "^9.4.2",
-		"nodecg": "1.4.1",
+		"nodecg": "1.5.0",
 		"prettier": "^1.18.2",
 		"sort-package-json": "^1.22.1",
+		"ts-node": "^8.4.1",
 		"typescript": "^3.6.4"
 	}
 }

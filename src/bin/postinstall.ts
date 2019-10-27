@@ -1,4 +1,4 @@
-import {bowerInstall, linkBundle, linkCfg, linkDb} from '..';
+import {bowerInstall, linkBundle, linkCfg, linkDb, linkNodeModules} from '..';
 
 export const postinstall = (): void => {
 	bowerInstall().catch((error) => {
@@ -15,6 +15,10 @@ export const postinstall = (): void => {
 	});
 	linkDb().catch((error) => {
 		console.error('Failed to link db directory', error.stack);
+		process.exitCode = 1;
+	});
+	linkNodeModules().catch((error) => {
+		console.error('Failed to link node_modules', error.stack);
 		process.exitCode = 1;
 	});
 };
