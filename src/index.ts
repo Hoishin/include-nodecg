@@ -11,13 +11,17 @@ import cpx from 'cpx';
 
 const symlink = promisify(fs.symlink);
 const readdir = promisify(fs.readdir);
-const mkdir = promisify(fs.mkdir);
 
 const nodecgPath = appRootPath.resolve('.nodecg');
 const {name: bundleName} = appRootPath.require('package.json');
 
 export const moveNodecg = async (): Promise<void> => {
-	await del(nodecgPath);
+	await del([
+		`${nodecgPath}/**`,
+		`!${nodecgPath}`,
+		`!${nodecgPath}/cfg`,
+		`!${nodecgPath}/db`,
+	]);
 	return new Promise((resolve, reject) => {
 		cpx.copy(
 			appRootPath.resolve('node_modules/nodecg/**/*'),
@@ -60,46 +64,6 @@ export const linkBundle = async (): Promise<void> => {
 	await symlink(
 		path.relative(path.dirname(bundlePath), appRootPath.path),
 		bundlePath,
-		'dir',
-	);
-};
-
-export const linkCfg = async (): Promise<void> => {
-	const sourceCfgPath = appRootPath.resolve('cfg');
-	try {
-		await readdir(sourceCfgPath);
-	} catch (error) {
-		if (error.code === 'ENOENT') {
-			await mkdir(sourceCfgPath);
-		} else {
-			throw error;
-		}
-	}
-	const cfgPath = path.join(nodecgPath, 'cfg');
-	await del(cfgPath);
-	await symlink(
-		path.relative(path.dirname(cfgPath), sourceCfgPath),
-		cfgPath,
-		'dir',
-	);
-};
-
-export const linkDb = async (): Promise<void> => {
-	const sourceDbPath = appRootPath.resolve('db');
-	try {
-		await readdir(sourceDbPath);
-	} catch (error) {
-		if (error.code === 'ENOENT') {
-			await mkdir(sourceDbPath);
-		} else {
-			throw error;
-		}
-	}
-	const dbPath = path.join(nodecgPath, 'db');
-	await del(dbPath);
-	await symlink(
-		path.relative(path.dirname(dbPath), sourceDbPath),
-		dbPath,
 		'dir',
 	);
 };
