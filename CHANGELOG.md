@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.2](https://github.com/Hoishin/include-nodecg/compare/v0.0.1...v0.0.2) (2019-11-01)
+
+
+### Bug Fixes
+
+* **deps:** update dependency app-root-path to v3 ([#81](https://github.com/Hoishin/include-nodecg/issues/81)) ([e9b6616](https://github.com/Hoishin/include-nodecg/commit/e9b6616109390b664ba1636cb7e43630319c4293))
+* use original directory for nodecg context ([28f6737](https://github.com/Hoishin/include-nodecg/commit/28f673799aefcb9db4dbcae794a017ae2da4de51))
+
 ### [0.0.1](https://github.com/Hoishin/include-nodecg/compare/v0.0.1-7...v0.0.1) (2019-10-27)
 
 
