@@ -3,7 +3,7 @@
 	"files": [
 		"lib"
 	],
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "Tools to include NodeCG in your bundle, rather than including your bundle in NodeCG",
 	"license": "MIT",
 	"main": "lib/index.js",
