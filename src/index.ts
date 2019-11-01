@@ -7,18 +7,36 @@ import del from 'del';
 import appRootPath from 'app-root-path';
 import isRoot from 'is-root';
 import isDocker from 'is-docker';
-import loadJson from 'load-json-file';
-import cpy from 'cpy'
-
-const nodecgPath = appRootPath.resolve('node_modules/nodecg');
-
-fs.readdirSync(nodecgPath);
+import cpx from 'cpx';
 
 const symlink = promisify(fs.symlink);
 const readdir = promisify(fs.readdir);
 const mkdir = promisify(fs.mkdir);
 
-export const {name: bundleName} = appRootPath.require('package.json');
+const nodecgPath = appRootPath.resolve('.nodecg');
+const {name: bundleName} = appRootPath.require('package.json');
+
+export const moveNodecg = async (): Promise<void> => {
+	await del(nodecgPath);
+	return new Promise((resolve, reject) => {
+		cpx.copy(
+			appRootPath.resolve('node_modules/nodecg/**/*'),
+			nodecgPath,
+			{includeEmptyDirs: true},
+			(error) => {
+				if (error === null) {
+					resolve();
+				} else {
+					reject(error);
+				}
+			},
+		);
+	});
+};
+
+export const npmInstall = async () => {
+	await execa.command('npm ci --production', {cwd: nodecgPath});
+};
 
 export const bowerInstall = async (): Promise<void> => {
 	const nodecgDirFiles = await readdir(nodecgPath, {encoding: 'utf8'});
@@ -84,24 +102,6 @@ export const linkDb = async (): Promise<void> => {
 		dbPath,
 		'dir',
 	);
-};
-
-export const copyNodeModules = async (): Promise<void> => {
-	// eslint-disable-next-line @typescript-eslint/no-var-requires, @typescript-eslint/no-require-imports
-	const nodecgNodeModulesPath = path.join(nodecgPath, 'node_modules');
-	const rootNodeModulesPath = appRootPath.resolve('node_modules');
-	const {dependencies} = await loadJson(
-		path.join(nodecgPath, 'package.json'),
-	);
-	for (const dep of Object.keys(dependencies)) {
-		const targetDir = path.join(nodecgNodeModulesPath, dep);
-		try {
-			await readdir(targetDir);
-			continue;
-		} catch (_) {
-			await cpy(path.join(rootNodeModulesPath, dep), targetDir)
-		}
-	}
 };
 
 export const start = (): void => {

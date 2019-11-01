@@ -11,23 +11,33 @@ export const enum Command {
 	Start = 'start',
 }
 
-const {argv} = yargs
-	.demandCommand(1)
-	.command(Command.Postinstall, 'Set this command to npm `postinstall` hook')
-	.command(Command.Start, 'Start NodeCG')
-	.strict();
+const COMMAND_NUMBER = 1;
 
-const [command] = argv._;
+const main = async () => {
+	const {argv} = yargs
+		.demandCommand(COMMAND_NUMBER)
+		.command(
+			Command.Postinstall,
+			'Set this command to npm `postinstall` hook',
+		)
+		.command(Command.Start, 'Start NodeCG')
+		.strict();
 
-switch (command) {
-	case Command.Postinstall:
-		postinstall();
-		break;
-	case Command.Start:
-		start();
-		break;
-	default:
-		console.error('Unexpected command:', command);
-		process.exitCode = 1;
-		break;
-}
+	const [command] = argv._;
+	switch (command) {
+		case Command.Postinstall:
+			await postinstall();
+			break;
+		case Command.Start:
+			start();
+			break;
+		default:
+			console.error('Unexpected command:', command);
+			process.exitCode = 1;
+			break;
+	}
+};
+
+main().catch((error) => {
+	console.error(error);
+});

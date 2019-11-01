@@ -37,7 +37,7 @@
 	"dependencies": {
 		"app-root-path": "^3.0.0",
 		"bower": "^1.8.8",
-		"cpy": "^7.3.0",
+		"cpx": "^1.5.0",
 		"del": "^5.0.0",
 		"execa": "^3.0.0",
 		"is-docker": "^2.0.0",
@@ -50,6 +50,7 @@
 		"@hoishin/prettierrc": "^2.1.1",
 		"@hoishin/tsconfig": "^2.0.0",
 		"@types/app-root-path": "^1.2.4",
+		"@types/cpx": "^1.5.0",
 		"@types/node": "^10.14.22",
 		"@types/yargs": "^13.0.3",
 		"del-cli": "^3.0.0",

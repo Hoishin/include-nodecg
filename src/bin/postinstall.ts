@@ -1,24 +1,19 @@
-import {bowerInstall, linkBundle, linkCfg, linkDb, copyNodeModules} from '..';
+import {
+	bowerInstall,
+	linkBundle,
+	linkCfg,
+	linkDb,
+	moveNodecg,
+	npmInstall,
+} from '..';
 
-export const postinstall = (): void => {
-	bowerInstall().catch((error) => {
-		console.error('Failed to run bower install', error.stack);
-		process.exitCode = 1;
-	});
-	linkBundle().catch((error) => {
-		console.error('Failed to link bundle directory', error.stack);
-		process.exitCode = 1;
-	});
-	linkCfg().catch((error) => {
-		console.error('Failed to link cfg directory', error.stack);
-		process.exitCode = 1;
-	});
-	linkDb().catch((error) => {
-		console.error('Failed to link db directory', error.stack);
-		process.exitCode = 1;
-	});
-	copyNodeModules().catch((error) => {
-		console.error('Failed to link node_modules', error.stack);
-		process.exitCode = 1;
-	});
+export const postinstall = async () => {
+	await moveNodecg();
+	await Promise.all([
+		npmInstall(),
+		bowerInstall(),
+		linkBundle(),
+		linkCfg(),
+		linkDb(),
+	]);
 };
