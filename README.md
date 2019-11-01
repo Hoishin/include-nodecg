@@ -22,7 +22,7 @@ yarn add include-nodecg nodecg
 
 ## Setup
 
-- Setup `postinstall` npm hook in package.json
+-   Setup `postinstall` npm hook in package.json
     ```json
     "scripts": {
       "postinstall": "include-nodecg postinstall"
