@@ -44,7 +44,7 @@
 		"is-docker": "^2.0.0",
 		"is-root": "^2.1.0",
 		"load-json-file": "^6.2.0",
-		"tslib": "^1.9.3",
+		"tslib": "^2.0.0",
 		"yargs": "^15.0.0"
 	},
 	"devDependencies": {
